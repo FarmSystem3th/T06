@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자가 진단</title>
+    <link rel="stylesheet" href='static/style.css'>
+    <link rel="stylesheet" href="static/checklist.css">
+    <script src="static/script.js" defer></script>
+</head>
+<body>
+    <div id="app">
+        <h1>자가 진단</h1>
+        <form id="user-form">
+            <label>이름: <input type="text" id="name" required></label></br>
+            <label>생년월일: <input type="date" id="dob" required></label>
+            <button type="submit">다음</button>
+        </form>
+
+        <form id="checklist-form" style="display: none;">
+            <div id="questions"></div><br>
+            <button type="submit">제출</button>
+        </form>
+
+        <div id="result" style="display: none;">
+            <p>결과를 확인하세요!</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>챗봇 상담</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div id="chatbot">
+        <h1>챗봇 상담</h1>
+        
+        <!-- 대화창 -->
+        <div id="chat-box"></div>
+
+        <!-- 메시지 입력 폼 -->
+        <form id="chat-form">
+            <input type="text" id="message" placeholder="메시지를 입력하세요" required>
+            <button type="submit">전송</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatBox = document.getElementById('chat-box');
+            const initialMessage = `{{ initial_message | tojson | safe }}`;
+            if (initialMessage) {
+                const botDiv = document.createElement('div');
+                botDiv.classList.add('bot-message');
+                botDiv.textContent = initialMessage;
+                chatBox.appendChild(botDiv);
+            }
+        });
+        
+        document.getElementById('chat-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const userMessage = document.getElementById('message').value;
+            
+            // 대화창에 사용자 메시지 추가
+            const chatBox = document.getElementById('chat-box');
+            const userDiv = document.createElement('div');
+            userDiv.classList.add('user-message');
+            userDiv.textContent = userMessage;
+            chatBox.appendChild(userDiv);
+
+            // 서버로 메시지 전송
+            fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: userMessage })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // 서버 응답 (챗봇 메시지) 표시
+                const botDiv = document.createElement('div');
+                botDiv.classList.add('bot-message');
+                botDiv.textContent = data.response;
+                chatBox.appendChild(botDiv);
+
+                if (data.redirect_url) {
+                    alert('상담이 종료되었습니다.');
+                    window.location.href = data.redirect_url;
+                }
+                else {
+                    // 입력 필드 초기화
+                    document.getElementById('message').value = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
