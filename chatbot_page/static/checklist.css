@@ -1,0 +1,26 @@
+/* checklist.css */
+
+#questions {
+    margin-top: 20px;
+}
+
+.question {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.question p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.question label {
+    margin-right: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
