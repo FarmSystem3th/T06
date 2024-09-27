@@ -36,9 +36,25 @@
   2차 챗봇 상담이 종료되면 ai는 챗봇을 통해 이뤄진 질의응답 내용을 분석하여 예측 모델에 학습시킵니다. 이 상담데이터를 기반으로 학대 의심 여부를 예측하고, 신고 의무자인 담당 교사에게 예측 결과를 전달하거나 하여 적절한 조치를 취할 수 있도록 돕습니다.
 
 
-[ 예시 구현 화면 ]
+[ 구현 화면 예시 ]
+![image](https://github.com/user-attachments/assets/b0716a39-dce3-40f5-b014-1d28d5d481e4)
+![image](https://github.com/user-attachments/assets/d7e885f7-09e2-4d76-bb1a-4c4cadfb9dcb)
+![image](https://github.com/user-attachments/assets/8b9c0c4f-0eeb-43ab-9fff-38d98e96a58c)
+![image](https://github.com/user-attachments/assets/2e26792c-3958-454d-8726-47d6670ebf57)
+
+
+[ 영상 ]
 https://github.com/user-attachments/assets/171a97f2-5376-4e2a-bd61-7bee708aeb12
 
+## 팀 구성
+
+구분 | 성명 | 소속학과 |
+------|-------|-------|
+팀장 | 김용빈 | 정보통신학과 | 데이터사이언스전공 |     
+팀원 | 김민지 | 경영학과 | 융합SW연계전공 |    
+팀원 | 박채현 | 경영정보학과 | 데이터사이언스전공 |   
+팀원 | 염승훈 | 정보통신학과 | 데이터사이언스전공 | 
+팀원 | 추상윤 | 정보통신학과 | 데이터사이언스전공 | 
 
 <br/><br/>
 
